@@ -1,16 +1,17 @@
 {
   "name": "modern-node",
   "version": "0.1.0",
+  "private": true,
   "description": "Minimal, general purpose nodejs boilerplate",
   "main": "dist/index.js",
-  "repository": {},
+  "repository": "longseespace/modern-node-boilerplate",
   "author": "Long Nguyen <long@podzim.co>",
   "license": "MIT",
   "scripts": {
     "clean": "rimraf dist",
-    "start": "npm run build && node dist/index.js",
+    "start": "NODE_ENV=production npm run build && node dist/index.js",
     "dev": "PORT=3000 nodemon --delay 500ms src/index.js --exec babel-node src/index.js",
-    "build": "NODE_ENV=production babel src -d dist --source-maps",
+    "build": "babel src -d dist --source-maps",
     "lint": "eslint src",
     "lint:fix": "eslint src --fix",
     "test": "jest",
@@ -29,20 +30,31 @@
     ]
   },
   "dependencies": {
-    "jest": "19.0.2"
+    "babel-runtime": "^6.23.0"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
     "babel-eslint": "6.1.2",
     "babel-jest": "19.0.0",
     "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "1.4.0",
     "eslint": "2.13.1",
     "eslint-config-airbnb": "9.0.1",
     "eslint-plugin-import": "1.12.0",
     "eslint-plugin-jsx-a11y": "1.5.5",
     "eslint-plugin-react": "5.2.2",
+    "jest": "19.0.2",
     "nodemon": "1.11.0",
     "rimraf": "2.6.1"
-  }
+  },
+  "keywords": [
+    "minimal",
+    "nodejs",
+    "boilerplate",
+    "es6",
+    "babel",
+    "jest",
+    "eslint"
+  ]
 }
